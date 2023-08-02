@@ -1,13 +1,10 @@
 let data_all = document.querySelector(".data-all");
 let id = window.location.search.slice(2);
-console.log(id);
-
 const down_site = async (API) => {
   document.querySelector(".backdrop").classList = "backdrop d-b";
   document.querySelector(".lds-ellipsis").classList = "lds-ellipsis d-b";
   const request = await fetch(API);
   let data = await request.json();
-//   console.log(data);
   document.querySelector(".backdrop").classList = "backdrop d-n";
   document.querySelector(".lds-ellipsis").classList = "lds-ellipsis d-n";
   data_all.innerHTML = `

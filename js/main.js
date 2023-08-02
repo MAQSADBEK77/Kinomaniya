@@ -1,11 +1,9 @@
 let form = document.querySelector("form");
-let night_toogle = false;
 const down_site = async (API) => {
   document.querySelector(".backdrop").classList = "backdrop d-b";
   document.querySelector(".lds-ellipsis").classList = "lds-ellipsis d-b";
   const request = await fetch(API);
   let data = await request.json();
-  // console.log(data);
   document.querySelector(".backdrop").classList = "backdrop d-n";
   document.querySelector(".lds-ellipsis").classList = "lds-ellipsis d-n";
   let parent_h = document.querySelector(".parent");
@@ -14,7 +12,6 @@ const down_site = async (API) => {
   if (document.querySelector(".form-select").value == "name") {
     data_all.innerHTML = "";
     document.querySelector(".back").classList = "back d-none";
-    // console.log(data);
     if (data.Response === "True") {
       data.Search.forEach((element) => {
         parent_h.innerHTML += `
@@ -75,7 +72,6 @@ const down_site = async (API) => {
   }
 };
 down_site(`https://www.omdbapi.com/?s=${arr_generate[random]}&apikey=8c8f0b3f`);
-
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let search_in = document.querySelector("#search_in");
@@ -96,17 +92,3 @@ form.addEventListener("submit", (e) => {
     search_in.classList = "form-control bg-danger";
   }
 });
-function night_light() {
-  let night = document.querySelector(".bi-brightness-high");
-  let light = document.querySelector(".bi-moon");
-  light.classList.toggle("d-none");
-  night.classList.toggle("d-none");
-  if (night_toogle) {
-    document.documentElement.style.setProperty("--black", "black");
-    document.documentElement.style.setProperty("--white", "white");
-  } else {
-    document.documentElement.style.setProperty("--black", "white");
-    document.documentElement.style.setProperty("--white", "black");
-  }
-  night_toogle = !night_toogle;
-}

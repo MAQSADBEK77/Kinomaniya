@@ -11,6 +11,5 @@ fetch(`https://www.omdbapi.com/?s=batman&apikey=8c8f0b3f`)
          <h5>${element.Title}</h5>
          </div>
         </div>`;
-      console.log(element);
     });
   });

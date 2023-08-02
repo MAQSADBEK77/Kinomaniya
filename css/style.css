@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Inder&display=swap);
-  @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
 body {
   font-family: "Inder", sans-serif;
 }
@@ -205,17 +205,10 @@ h1 {
 .carousel-caption {
   color: rgb(255, 0, 0);
 }
-.carousel-caption h5 {  
+.carousel-caption h5 {
   font-size: 75px !important;
-  font-family: 'Bungee Spice', cursive;
-
+  font-family: "Bungee Spice", cursive;
 }
-
-
-
-
-
-
 @media screen and (max-width: 970px) {
   .top-block select {
     width: 100px !important;
@@ -263,6 +256,11 @@ h1 {
     margin: 0 auto;
     margin-top: 20px;
   }
-}
-@media screen and(max-width:296px) {
+  .slide {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .parent {
+    transform: translateY(15px);
+  }
 }
