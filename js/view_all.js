@@ -48,4 +48,4 @@ const down_site = async (API) => {
                 </div>
     `;
 };
-down_site(`https://www.omdbapi.com/?i=${id}&apikey=8c8f0b3f`);
+down_site(`https://www.omdbapi.com/?i=${id}&apikey=33814a69`);

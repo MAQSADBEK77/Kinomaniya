@@ -1,4 +1,4 @@
-fetch(`https://www.omdbapi.com/?s=${arr_generate[random2]}&apikey=8c8f0b3f`)
+fetch(`https://www.omdbapi.com/?s=${arr_generate[random2]}&apikey=33814a69`)
   .then((res) => {
     return res.json();
   })

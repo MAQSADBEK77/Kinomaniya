@@ -28,65 +28,71 @@ const down_site = async (API) => {
     }
   } else if (document.querySelector(".form-select").value == "id") {
     parent_h.innerHTML = "";
+
     document.querySelector(".back").classList = "back";
-    data_all.innerHTML = `
-            <div class="data">
-                <div class="left-data">
-                    <img src=${data.Poster}>
-                </div>
-                <div class="right-data">
-                    <a href=${data.Poster} class="viev">View online</a>
-                    <div>
-                        <h5>Title: </h5><span class="title">${data.Title}</span>
-                    </div>
-                    <div>
-                        <p>Year: </p><span class="year">${data.Year}</span>
-                    </div>
-                    <div>
-                        <p>Runtime: </p><span class="time">${data.Runtime}</span>
-                    </div>
-                    <div>
-                        <p>Awards: </p><span class="awards">${data.Awards}</span>
-                    </div>
-                    <div>
-                        <p>Actors: </p><span class="actors">${data.Actors}</span>
-                    </div>
-                    <div>
-                        <p>Country: </p><span class="country">${data.Country}</span>
-                    </div>
-                    <div>
-                        <p>Language: </p><span class="language">${data.Language}</span>
-                    </div>
-                    <div>
-                        <p>Genre: </p><span class="genre">${data.Genre}</span>
-                    </div>
-                    <div>
-                        <p>Film Id: </p><span class="id">${data.imdbID}</span>
-                    </div
-                </div>
-                </div>
-                <div class="bottom-text">
-                    <h6>${data.Plot}</h6>
-                </div>
-    `;
+    console.log(data.Poster);
+    if (data.Poster == undefined) {
+      parent_h.innerHTML = "<h1>Bu ID bo'yicha hech nima topilmadi... 🙃</h1>";
+    } else {
+      data_all.innerHTML = `
+              <div class="data">
+                  <div class="left-data">
+                      <img src=${data.Poster}>
+                  </div>
+                  <div class="right-data">
+                      <a href=${data.Poster} class="viev">View online</a>
+                      <div>
+                          <h5>Title: </h5><span class="title">${data.Title}</span>
+                      </div>
+                      <div>
+                          <p>Year: </p><span class="year">${data.Year}</span>
+                      </div>
+                      <div>
+                          <p>Runtime: </p><span class="time">${data.Runtime}</span>
+                      </div>
+                      <div>
+                          <p>Awards: </p><span class="awards">${data.Awards}</span>
+                      </div>
+                      <div>
+                          <p>Actors: </p><span class="actors">${data.Actors}</span>
+                      </div>
+                      <div>
+                          <p>Country: </p><span class="country">${data.Country}</span>
+                      </div>
+                      <div>
+                          <p>Language: </p><span class="language">${data.Language}</span>
+                      </div>
+                      <div>
+                          <p>Genre: </p><span class="genre">${data.Genre}</span>
+                      </div>
+                      <div>
+                          <p>Film Id: </p><span class="id">${data.imdbID}</span>
+                      </div
+                  </div>
+                  </div>
+                  <div class="bottom-text">
+                      <h6>${data.Plot}</h6>
+                  </div>
+      `;
+    }
   }
 };
-down_site(`https://www.omdbapi.com/?s=${arr_generate[random]}&apikey=8c8f0b3f`);
+down_site(`https://www.omdbapi.com/?s=${arr_generate[random]}&apikey=33814a69`);
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let search_in = document.querySelector("#search_in");
   let search_val = search_in.value.trim().toLowerCase();
   if (search_val.length == "") {
     down_site(
-      `https://www.omdbapi.com/?s=${arr_generate[random]}&apikey=8c8f0b3f`
+      `https://www.omdbapi.com/?s=${arr_generate[random]}&apikey=33814a69`
     );
   } else if (search_val.length > 3) {
     document.querySelector(".modals").innerHTML = "";
     search_in.classList = "form-control";
     if (document.querySelector(".form-select").value == "name") {
-      down_site(`https://www.omdbapi.com/?s=${search_val}&apikey=8c8f0b3f`);
+      down_site(`https://www.omdbapi.com/?s=${search_val}&apikey=33814a69`);
     } else if (document.querySelector(".form-select").value == "id") {
-      down_site(`https://www.omdbapi.com/?i=${search_val}&apikey=8c8f0b3f`);
+      down_site(`https://www.omdbapi.com/?i=${search_val}&apikey=33814a69`);
     }
   } else {
     search_in.classList = "form-control bg-danger";
