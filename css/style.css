@@ -110,6 +110,7 @@ input::placeholder {
   display: flex;
   column-gap: 100px;
   margin: 0 auto;
+  row-gap: 15px;
   flex-wrap: wrap;
 }
 .left-data img {
@@ -200,7 +201,8 @@ h1 {
 .carousel-item img {
   margin: 0 auto;
   width: 100% !important;
-  height: 400px !important;
+  height: 440px !important;
+  object-fit: cover;
 }
 .carousel-caption {
   color: rgb(255, 0, 0);
@@ -228,6 +230,21 @@ h1 {
   }
   #search_in {
     padding-right: 0;
+  }
+  .data {
+    text-align: center;
+    justify-content: center;
+  }
+  .right-data {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .right-data a {
+    margin: 0 auto;
+  }
+  .right-data div {
+    margin: 0 auto;
+    align-items: start;
   }
 }
 @media screen and (max-width: 430px) {
@@ -257,7 +274,7 @@ h1 {
     margin-top: 20px;
   }
   .slide {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   }
   .parent {

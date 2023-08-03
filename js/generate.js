@@ -14,7 +14,9 @@ let arr_generate = [
   "studio",
   "track",
   "mortal",
+  'home',
   "como",
   "yellow",
 ];
 let random = Math.floor(Math.random() * arr_generate.length);
+let random2 = Math.floor(Math.random() * arr_generate.length);
